@@ -2,9 +2,9 @@
 #include <vector>
 #include <string>
 
-int SindromeToDec(std::vector<int> novoC)
+int SindromeToDec(std::vector<int> newC)
 {
-    return(novoC.at(0)*1+novoC.at(1)*2+novoC.at(2)*4+novoC.at(3)*8+novoC.at(4)*16);
+    return(newC.at(0)*1+newC.at(1)*2+newC.at(2)*4+newC.at(3)*8+newC.at(4)*16);
 }
 
 std::string reverseString(std::string reverse)
@@ -18,15 +18,15 @@ std::string reverseString(std::string reverse)
 
 std::string hamming(std::string input)
 {
-    std::vector<int> novoC;
+    std::vector<int> newC;
 
-    novoC.push_back(((input[18]-'0')^(input[16]-'0')^(input[14]-'0')^(input[11]-'0')^(input[10]-'0')^(input[8]-'0')^(input[6]-'0')^(input[4]-'0')^(input[2]-'0')^(input[0]-'0')^(input[20]-'0')));
-    novoC.push_back(((input[18]-'0')^(input[15]-'0')^(input[14]-'0')^(input[12]-'0')^(input[11]-'0')^(input[10]-'0')^(input[7]-'0')^(input[6]-'0')^(input[3]-'0')^(input[2]-'0')^(input[19]-'0')));
-    novoC.push_back(((input[16]-'0')^(input[15]-'0')^(input[14]-'0')^(input[9]-'0')^(input[8]-'0')^(input[7]-'0')^(input[6]-'0')^(input[1]-'0')^(input[0]-'0')^(input[17]-'0')));
-    novoC.push_back(((input[12]-'0')^(input[11]-'0')^(input[10]-'0')^(input[9]-'0')^(input[8]-'0')^(input[7]-'0')^(input[6]-'0')^(input[13]-'0')));
-    novoC.push_back(((input[4]-'0')^(input[3]-'0')^(input[2]-'0')^(input[1]-'0')^(input[0]-'0')^(input[5]-'0')));
+    newC.push_back(((input[18]-'0')^(input[16]-'0')^(input[14]-'0')^(input[11]-'0')^(input[10]-'0')^(input[8]-'0')^(input[6]-'0')^(input[4]-'0')^(input[2]-'0')^(input[0]-'0')^(input[20]-'0')));
+    newC.push_back(((input[18]-'0')^(input[15]-'0')^(input[14]-'0')^(input[12]-'0')^(input[11]-'0')^(input[10]-'0')^(input[7]-'0')^(input[6]-'0')^(input[3]-'0')^(input[2]-'0')^(input[19]-'0')));
+    newC.push_back(((input[16]-'0')^(input[15]-'0')^(input[14]-'0')^(input[9]-'0')^(input[8]-'0')^(input[7]-'0')^(input[6]-'0')^(input[1]-'0')^(input[0]-'0')^(input[17]-'0')));
+    newC.push_back(((input[12]-'0')^(input[11]-'0')^(input[10]-'0')^(input[9]-'0')^(input[8]-'0')^(input[7]-'0')^(input[6]-'0')^(input[13]-'0')));
+    newC.push_back(((input[4]-'0')^(input[3]-'0')^(input[2]-'0')^(input[1]-'0')^(input[0]-'0')^(input[5]-'0')));
 
-    int cXor = SindromeToDec(novoC);
+    int cXor = SindromeToDec(newC);
     if(cXor != 0){
         std::string reverse = reverseString(input);
         for (int i = 0; i<21; i++)
